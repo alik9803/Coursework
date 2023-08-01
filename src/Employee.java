@@ -33,76 +33,7 @@ public class Employee {
     }
 
     public void setSalary(int salary) {
-        this.salary = (int) salary;
-    }
-
-    public static void printAllEmployee(Employee[] employees) {
-        for (Employee employee : employees) ;
-        System.out.println(employees.toString());
-    }
-
-    public static int calculateTotalSalary(Employee[] employees) {
-        int totalSalary = 0;
-        for (Employee employee : employees) {
-            totalSalary += employee.getSalary();
-        }
-        return totalSalary;
-    }
-
-    public static Employee findEmployeeWithMinSalary(Employee[] employees) {
-        Employee minSalaryEmployee = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < minSalaryEmployee.getSalary()) {
-                minSalaryEmployee = employees[i];
-            }
-        }
-        return minSalaryEmployee;
-    }
-
-    public static Employee findEmployeeWithMaxSalary(Employee[] employees) {
-        Employee maxSalaryEmployee = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() > maxSalaryEmployee.getSalary()) {
-                maxSalaryEmployee = employees[i];
-            }
-        }
-        return maxSalaryEmployee;
-    }
-
-    public static int calculateAverageSalary(Employee[] employees) {
-        int totalSalary = calculateTotalSalary(employees);
-        return (int) (totalSalary / employees.length);
-    }
-
-    public static void indexSalary(Employee[] employees, int percentage) {
-        for (Employee employee : employees) {
-            int increasedSalary = (int) (employee.getSalary() * (1 + percentage / 100));
-            employee.setSalary(increasedSalary);
-        }
-    }
-
-    public static void printEmployeesByDepartment(Employee[] employees, int department) {
-        for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                System.out.println("ID: " + employee.getId() + ", Имя Фамилия: " + employee.getFulName() + ", Зарплата: " + employee.getSalary());
-            }
-        }
-    }
-
-    public static void printEmployeesWithSalaryLessThan(Employee[] employees, int threshold) {
-        for (Employee employee : employees) {
-            if (employee.getSalary() < threshold) {
-                System.out.println("ID: " + employee.getId() + ", Имя Фамилия: " + employee.getFulName() + ", Зарплата: " + employee.getSalary());
-            }
-        }
-    }
-
-    public static void printEmployeesWithSalaryGreaterThanEqualTo(Employee[] employees, int threshold) {
-        for (Employee employee : employees) {
-            if (employee.getSalary() >= threshold) {
-                System.out.println("ID: " + employee.getId() + ", Имя Фамилия: " + employee.getFulName() + ", Заплата: " + employee.getSalary());
-            }
-        }
+        this.salary = salary;
     }
 
     @Override
@@ -110,4 +41,3 @@ public class Employee {
         return "ID: " + id + ", Имя Фамилия: " + fulName + ", Отдел: " + department + ", Зарплата: " + salary;
     }
 }
-
